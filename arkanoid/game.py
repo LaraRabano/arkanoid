@@ -2,11 +2,21 @@ import pygame as pg
 
 from arkanoid import ALTO, ANCHO
 
+Icon = pg.image.load('/Users/lara/Documents/BOOTCAMP/Probando-uno/arkanoid/arkanoid/Resources/Images/arkanoid_name.png')
+Fondo = pg.image.load('/Users/lara/Documents/BOOTCAMP/Probando-uno/arkanoid/arkanoid/Resources/Images/background.jpg')
+
 class Arkanoid:
     def __init__(self) -> None:
         print("Arranca el juego!!")
         pg.init()
-        self.display = pg.display.set_mode((ANCHO, ALTO))
+        self.display = pg.display.set_mode((ANCHO, ALTO)) 
+        pg.display.set_caption("Larkanoid") 
+        pg.display.set_icon(Icon)
+        self.display.blit(Fondo,(0,0))
+
+        #pygame.display.set_icon(Icon_name)
+        #Icon = pygame.image.load('gfglogo.png')
+        #pygame.display.set_icon(Icon)  
     
     def jugar(self):
         """""Este es el bucle principal"""
